@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 the original author or authors
+ * Copyright 2012-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
  *
  * @author Scott Andrews
@@ -10,10 +10,10 @@
 
 	var assert, refute, fail, failOnThrow;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
-	fail = buster.assertions.fail;
-	failOnThrow = buster.assertions.failOnThrow;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
+	fail = buster.referee.fail;
+	failOnThrow = buster.referee.failOnThrow;
 
 	define('rest/wire-test', function (require) {
 

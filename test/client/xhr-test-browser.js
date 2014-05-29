@@ -10,10 +10,10 @@
 
 	var assert, refute, fail, failOnThrow;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
-	fail = buster.assertions.fail;
-	failOnThrow = buster.assertions.failOnThrow;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
+	fail = buster.referee.fail;
+	failOnThrow = buster.referee.failOnThrow;
 
 	define('rest/client/xhr-test', function (require) {
 
@@ -41,7 +41,9 @@
 					assert.equals(xhr.statusText, response.status.text);
 					for (name in response.headers) {
 						/*jshint forin:false */
-						assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						if (!Array.isArray(response.headers[name])) {
+							assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						}
 					}
 					refute(request.canceled);
 				}).otherwise(fail);
@@ -58,7 +60,9 @@
 					assert.equals(xhr.statusText, response.status.text);
 					for (name in response.headers) {
 						/*jshint forin:false */
-						assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						if (!Array.isArray(response.headers[name])) {
+							assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						}
 					}
 					refute(request.canceled);
 				}).otherwise(fail);
@@ -75,7 +79,9 @@
 					assert.equals(xhr.statusText, response.status.text);
 					for (name in response.headers) {
 						/*jshint forin:false */
-						assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						if (!Array.isArray(response.headers[name])) {
+							assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						}
 					}
 					refute(request.canceled);
 				}).otherwise(fail);
@@ -92,7 +98,9 @@
 					assert.equals(xhr.statusText, response.status.text);
 					for (name in response.headers) {
 						/*jshint forin:false */
-						assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						if (!Array.isArray(response.headers[name])) {
+							assert.equals(xhr.getResponseHeader(name), response.headers[name]);
+						}
 					}
 					refute(request.canceled);
 				}).otherwise(fail);

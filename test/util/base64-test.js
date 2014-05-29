@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 the original author or authors
+ * Copyright 2012-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
  *
  * @author Scott Andrews
@@ -10,8 +10,8 @@
 
 	var assert, refute;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
 
 	define('rest/util/base64-test', function (require) {
 

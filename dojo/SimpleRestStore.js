@@ -56,7 +56,7 @@
 			 */
 			get: function (id /*, options */) {
 				return this.client({
-					path: id
+					path: String(id)
 				});
 			},
 
@@ -101,7 +101,7 @@
 
 				return this.client({
 					method: hasId && !options.incremental ? 'put' : 'post',
-					path: hasId ? id : '',
+					path: hasId ? String(id) : '',
 					entity: object,
 					headers: headers
 				});
@@ -135,7 +135,7 @@
 			remove: function (id) {
 				return this.client({
 					method: 'delete',
-					path: id
+					path: String(id)
 				});
 			},
 

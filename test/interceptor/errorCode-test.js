@@ -10,10 +10,10 @@
 
 	var assert, refute, fail, failOnThrow;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
-	fail = buster.assertions.fail;
-	failOnThrow = buster.assertions.failOnThrow;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
+	fail = buster.referee.fail;
+	failOnThrow = buster.referee.failOnThrow;
 
 	define('rest/interceptor/errorCode-test', function (require) {
 

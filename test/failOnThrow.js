@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors
+ * Copyright 2013-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
  *
  * @author Scott Andrews
@@ -10,9 +10,9 @@
 
 	var fail;
 
-	fail = buster.assertions.fail;
+	fail = buster.referee.fail;
 
-	buster.assertions.failOnThrow = function failOnThrow(func) {
+	buster.referee.failOnThrow = function failOnThrow(func) {
 		return function () {
 			try {
 				return func.apply(this, arguments);

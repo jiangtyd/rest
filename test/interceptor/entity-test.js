@@ -10,9 +10,9 @@
 
 	var assert, refute, fail;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
-	fail = buster.assertions.fail;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
+	fail = buster.referee.fail;
 
 	define('rest/interceptor/entity-test', function (require) {
 

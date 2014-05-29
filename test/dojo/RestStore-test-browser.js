@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 the original author or authors
+ * Copyright 2012-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
  *
  * @author Scott Andrews
@@ -10,9 +10,9 @@
 
 	var assert, refute, fail;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
-	fail = buster.assertions.fail;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
+	fail = buster.referee.fail;
 
 	define('rest/dojo/RestStore-test', function (require) {
 
@@ -75,7 +75,7 @@
 					assert.equals('put', response.request.method);
 					assert.equals('*', response.request.headers['If-None-Match']);
 					assert.equals('bar', response.request.entity.foo);
-					refute.equals('42', response.request.entity.id);
+					refute.equals(42, response.request.entity.id);
 				}).otherwise(fail);
 			},
 			'should add a record with an implicit ID': function () {
@@ -85,7 +85,7 @@
 					assert.equals('put', response.request.method);
 					assert.equals('*', response.request.headers['If-None-Match']);
 					assert.equals('bar', response.request.entity.foo);
-					assert.equals('42', response.request.entity.id);
+					assert.equals(42, response.request.entity.id);
 				}).otherwise(fail);
 			},
 			'should add a record ignoring the ID': function () {
@@ -95,7 +95,7 @@
 					assert.equals('post', response.request.method);
 					assert.equals('*', response.request.headers['If-None-Match']);
 					assert.equals('bar', response.request.entity.foo);
-					assert.equals('42', response.request.entity.id);
+					assert.equals(42, response.request.entity.id);
 				}).otherwise(fail);
 			},
 			'should put overwriting target': function () {

@@ -10,8 +10,8 @@
 
 	var assert, refute;
 
-	assert = buster.assertions.assert;
-	refute = buster.assertions.refute;
+	assert = buster.referee.assert;
+	refute = buster.referee.refute;
 
 	define('rest-test', function (require) {
 

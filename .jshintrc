@@ -30,7 +30,7 @@
     "maxparams"     : 5,         // max number of formal parameters allowed per function
     "maxdepth"      : 3,         // control how nested do you want your blocks to be
     "maxstatements" : 40,        // max number of statements allowed per function
-    "maxcomplexity" : 8,         // control cyclomatic complexity throughout your code
+    "maxcomplexity" : 20,        // control cyclomatic complexity throughout your code
     "maxlen"        : 0,         // maximum length of a line
 
 
